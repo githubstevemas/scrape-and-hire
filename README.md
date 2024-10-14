@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://github.com/githubstevemas/scrape-and-hire/actions/workflows/ci.yml/badge.svg" alt="Build Status">
+  <img src="https://img.shields.io/badge/python-3.10%2B-blue.svg" alt="Python Version">
+</p>
+
 # Scrape & Hire
  
 This Python project allows users to upload their CV in PDF format and matches it with job postings scraped from job board like [Indeed](https://indeed.com). The system extracts key details from the CV and job descriptions, then calculates a matching score to help users find the most relevant job opportunities.
@@ -17,6 +22,7 @@ This Python project allows users to upload their CV in PDF format and matches it
 ## Technologies Used
 
 - [Python](https://www.python.org/) - Core programming language
+- [Flake8](https://flake8.pycqa.org/en/latest/) - For linting
 - [Selenium](https://www.selenium.dev/) - For browser automation to bypass restrictions
 - [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/) - For parsing HTML and extracting data
 - [PosrtgreSQL](https://www.postgresql.org/) - For db storage
@@ -24,7 +30,7 @@ This Python project allows users to upload their CV in PDF format and matches it
 
 <br>
 
-## How to Run
+## Install and configuration
 
 1. **Clone the repository**:
    ```bash
@@ -35,16 +41,32 @@ This Python project allows users to upload their CV in PDF format and matches it
    pip install -r requirements.txt
    ```
 
-3. **Run the script**:
-   ```bash
-   python main.py
-   ```
+<br>
+
+## How to run
+
+*Once the project configuration is completed you can execute the following commands in the project folder to start server :*
+```
+ python main.py
+```
 
 <br>
 
 ## Usage
 
-Modify the scraping targets: In the main.py file, you can define the target URLs for scraping.
+*Soon*
+
+<br>
+
+## Troubleshooting
+
+*Soon*
+
+<br>
+
+## Changelog
+
+*Soon*
 
 <br>
 
