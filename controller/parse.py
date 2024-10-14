@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 
+from controller.db_insert import insert_job
 from controller.scrap import get_page_content
 
 
@@ -12,43 +13,42 @@ def get_job_data(page_content):
     """
 
     page_soup = BeautifulSoup(page_content, "html.parser")
+    job_data = {}
 
     if page_soup:
 
-        # GET TITLE
-        title = page_soup.find(
-            'h1',
-            class_="jobsearch-JobInfoHeader-title css-1b4cr5z e1tiznh50"
-        ).text
+        try:
+            # GET TITLE
+            title = page_soup.find(
+                'h1',
+                class_="jobsearch-JobInfoHeader-title css-1b4cr5z e1tiznh50"
+            ).text
 
-        # GET JOB TYPES
-        div_job_types = page_soup.find_all(
-            'div',
-            class_='js-match-insights-provider-tvvxwd ecydgvn1'
-        )
+            # GET COMPANY
+            company = page_soup.find(
+                'div', {'data-company-name': 'true'}
+            )
+            company_name = company.find('a').text
 
-        job_types = []
+            # GET DESCRIPTION
+            job_text = page_soup.find('div', {'id': 'jobDescriptionText'})
+            description = job_text.get_text(separator='\n').strip()
 
-        for job_type in div_job_types:
+            print(f"\nOK -> {title} / {company_name}")
 
-            job_type = job_type.text
-            if job_type:
-                job_types.append(job_type)
+            job_data = {
+                "title": title,
+                "company": company_name,
+                "description": description
+            }
 
-        # GET COMPANY
-        company = page_soup.find(
-            'div', {'data-company-name': 'true'}
-        )
-        company_name = company.find('a').text
+        except Exception as e:
+            print(f"error -> {e}")
 
-        # GET DESCRIPTION
-        job_description = page_soup.find('div', {'id': 'jobDescriptionText'})
-        job_text = job_description.get_text(separator='\n').strip()
-
-        print(f"\n{title} / {job_types} / {company_name}")
-        print(job_text)
     else:
-        print(f"Something get wrong with parsing.")
+        print("Something get wrong with parsing.")
+
+    return job_data
 
 
 def get_main_page(page_content):
@@ -69,12 +69,15 @@ def get_main_page(page_content):
     if jobs_content:
 
         for job_content in jobs_content:
+
             job_link = job_content.find('a')
             job_url = f"https://www.indeed.com{job_link['href']}"
 
             content_job_page = get_page_content(job_url)
+            job_data = get_job_data(content_job_page)
 
-            get_job_data(content_job_page)
+            # Insert data to db
+            insert_job(job_data)
 
     else:
         print(f"No jobs found in {page_content}")

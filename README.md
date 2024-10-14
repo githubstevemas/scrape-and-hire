@@ -1,6 +1,6 @@
 # Scrape & Hire
  
-This Python project scrapes job offers from various platforms using Selenium and BeautifulSoup. The tool is designed to bypass platform restrictions using Selenium to automate browser interactions and retrieve job data efficiently.
+This Python project allows users to upload their CV in PDF format and matches it with job postings scraped from job board like [Indeed](https://indeed.com). The system extracts key details from the CV and job descriptions, then calculates a matching score to help users find the most relevant job opportunities.
 
 <br>
 
@@ -9,7 +9,8 @@ This Python project scrapes job offers from various platforms using Selenium and
 - Scrape job listings from multiple platforms
 - Bypass JavaScript-based blocking with Selenium automation
 - Parse and extract relevant job details with BeautifulSoup
-- Handle pagination and dynamic content loading
+- Upload and extract CV for analysis
+- Store many CVs and offers
 
 <br>
 
@@ -18,6 +19,8 @@ This Python project scrapes job offers from various platforms using Selenium and
 - [Python](https://www.python.org/) - Core programming language
 - [Selenium](https://www.selenium.dev/) - For browser automation to bypass restrictions
 - [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/) - For parsing HTML and extracting data
+- [PosrtgreSQL](https://www.postgresql.org/) - For db storage
+- [pdfplumber](https://github.com/jsvine/pdfplumber) - For text exctracting from pdf CV file
 
 <br>
 

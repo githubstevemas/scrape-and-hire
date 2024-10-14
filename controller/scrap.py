@@ -26,12 +26,13 @@ def get_page_content(query_link):
 
     page_content = ''
 
-    if driver:
+    try:
         page_content = driver.page_source
-    else:
-        print(f"Something get wrong with {query_link} url.")
 
-    time.sleep(2)
+    except Exception as e:
+        print(e)
+
+    time.sleep(3)
 
     driver.quit()
 
