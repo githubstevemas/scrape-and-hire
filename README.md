@@ -16,6 +16,7 @@ This Python project allows users to upload their CV in PDF format and matches it
 - Parse and extract relevant job details with BeautifulSoup
 - Upload and extract CV for analysis
 - Store many CVs and offers
+- Use NLP for text processing
 
 <br>
 
@@ -27,6 +28,7 @@ This Python project allows users to upload their CV in PDF format and matches it
 - [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/) - For parsing HTML and extracting data
 - [PosrtgreSQL](https://www.postgresql.org/) - For db storage
 - [pdfplumber](https://github.com/jsvine/pdfplumber) - For text exctracting from pdf CV file
+- [spaCy](https://spacy.io/) - For text processing and tokenization
 
 <br>
 
@@ -39,6 +41,10 @@ This Python project allows users to upload their CV in PDF format and matches it
 2. **Install the required dependencies: Navigate to the project directory and run**:
    ```bash
    pip install -r requirements.txt
+   ```
+3. **Install French trained pipelines for spaCy**:
+   ```bash
+   python -m spacy download fr_core_news_sm
    ```
 
 <br>
@@ -60,7 +66,7 @@ This Python project allows users to upload their CV in PDF format and matches it
 
 ## Troubleshooting
 
-*Soon*
+- **OSError: [E050] Can't find model 'fr_core_news_md'** : the trainned pipeline for spaCy is not installed, use ``python -m spacy download fr_core_news_md`` to download it.
 
 <br>
 
