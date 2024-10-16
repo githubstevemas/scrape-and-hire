@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-from controller.db_insert import insert_job
+from controller.db_manager import insert_job
 from controller.scrap import get_page_content
 
 

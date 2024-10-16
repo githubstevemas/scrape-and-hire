@@ -70,9 +70,15 @@ This Python project allows users to upload their CV in PDF format and matches it
 
 <br>
 
-## Changelog
+## Upcoming Features
 
-*Soon*
+This project is currently in its beta phase, and the final version is still under development. The following features are planned for future releases:
+
+- Possibility of choosing the sites to scrape
+- Possibility of choosing the driver for Selenium
+- CV analysis (identify skills, experience, and qualifications from the extracted text)
+- Extract relevant information from job descriptions in the database
+- Compare the user's CV with the job descriptions in the database to evaluate the match
 
 <br>
 

@@ -1,4 +1,5 @@
 from controller import main_controller
+from controller.cv import get_cvs_in_db
 from controller.main_controller import add_new_cv
 from model.db import create_tables
 from view import main_view, settings_view, cv_view
@@ -22,7 +23,8 @@ def main():
 
             if user_cv_choice == "1":
                 # Current CV
-                pass
+
+                get_cvs_in_db()
 
             if user_cv_choice == "2":
                 # Upload CV

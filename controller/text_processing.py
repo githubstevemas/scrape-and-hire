@@ -15,6 +15,10 @@ def extract_skills(cv_text):
         if word.text in skills_list:
             personnal_skills.append(word.text)
 
-    # print(personnal_skills)
+    """
+    print("Skills:")
+    for skill in personnal_skills:
+        print(skill)
+    """
 
     return personnal_skills

@@ -3,8 +3,8 @@ from dotenv import load_dotenv
 from view.cv_view import display_name_cv
 from . import scrap
 from . import parse
-from .cv import create_cv_folder_if_not, extract_pdf_data
-from .db_insert import insert_cv
+from .cv import create_cv_folder_if_not, extract_pdf_data, get_pdf_file
+from .db_manager import insert_cv
 from .text_processing import extract_skills
 
 load_dotenv()
@@ -19,8 +19,10 @@ query_link = \
 def add_new_cv():
 
     create_cv_folder_if_not()
-    # display_upload_instructions()
-    cv_text = extract_pdf_data()
+
+    pdf_to_upload = get_pdf_file()
+
+    cv_text = extract_pdf_data(pdf_to_upload)
 
     if cv_text:
 
