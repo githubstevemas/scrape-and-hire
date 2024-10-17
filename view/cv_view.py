@@ -6,7 +6,7 @@ def main_menu():
     print("[1] Define a CV to use")
     print("[2] Upload new CV")
     print("[3]")
-    print("[0] Exit\n")
+    print("[0] Return\n")
     user_choice = input("Your choice ? ")
 
     return user_choice
