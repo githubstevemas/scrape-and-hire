@@ -24,3 +24,8 @@ def no_model_installed():
     print("Use for exemple : python -m spacy download fr_core_news_md")
     print("Then set as current in Settings menu\n")
     print("More pipelines at https://spacy.io/models")
+
+
+def no_job_board_settled():
+
+    print("No job board settled.")

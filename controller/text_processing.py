@@ -39,6 +39,18 @@ def extract_skills(cv_text):
     nlp = spacy.load(model_name)
     doc = nlp(cv_text.lower())
 
+    # print(doc)
+
+    for token in doc:
+        if token.dep_ == "ROOT":
+            print(f"Root: {token}")
+
+    for token in doc:
+        if token.pos_ == "VERB":
+            print(f"Verb: {token}")
+
+    input("press enter")
+
     personnal_skills = []
 
     for word in doc:

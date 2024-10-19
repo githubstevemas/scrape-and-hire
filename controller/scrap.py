@@ -13,8 +13,6 @@ def get_page_content(query_link):
     return: str with content for one page
     """
 
-    # print("Scraping page in progress...")
-
     options = webdriver.EdgeOptions()
     options.use_chromium = True
 
@@ -32,7 +30,7 @@ def get_page_content(query_link):
     except Exception as e:
         print(e)
 
-    time.sleep(3)
+    time.sleep(8)
 
     driver.quit()
 

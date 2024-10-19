@@ -6,7 +6,7 @@
 # Scrape & Hire
 <br>
  
-This Python project allows users to upload their CV in PDF format and matches it with job postings scraped from job board like [Indeed](https://indeed.com). The system extracts key details from the CV and job descriptions, then calculates a matching score to help users find the most relevant job opportunities.
+This Python project allows users to upload their CV in PDF format and matches it with job postings scraped from job board like [Welcome to th Jungle](https://www.welcometothejungle.com/) or [Indeed](https://indeed.com). The system extracts key details from the CV and job descriptions, then calculates a matching score to help users find the most relevant job opportunities.
 
 <br>
 

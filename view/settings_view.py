@@ -12,6 +12,19 @@ def main_menu():
     return user_choice
 
 
+def display_job_boards():
+
+    print("\nSELECT JOB BOARD\n")
+    print("[1] Welcome to the Jungle")
+    print("[2] Indeed")
+    print("[3]")
+    print("[4]")
+    print("[0] Return\n")
+    user_choice = input("Your choice ? ")
+
+    return user_choice
+
+
 def display_nlp_models(models_names):
 
     print("\nINSTALLED MODELS\n")
