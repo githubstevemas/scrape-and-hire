@@ -23,8 +23,11 @@ def find_job_content(text_to_parse):
 
     for li in link:
 
+        job_link = li["href"]
+
         job_content = get_main_jobs_content(
-            f"https://www.welcometothejungle.com{li["href"]}")
+            f"https://www.welcometothejungle.com{job_link}"
+        )
 
         title = job_content.find("h2").text
 
