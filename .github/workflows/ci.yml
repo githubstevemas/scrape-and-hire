@@ -29,3 +29,9 @@ jobs:
 
       - name: Run flake8
         run: flake8 .
+
+      - name: Run tests with coverage
+        run: pytest --cov
+
+      - name: Check coverage
+        run: coverage report --fail-under=90
